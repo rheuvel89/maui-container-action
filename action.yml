@@ -10,9 +10,34 @@ inputs:
     description: 'Path to the Android project file, relative to repository root'
     required: true
     default: ''
+  BuildConfiguration:  # id of input
+    description: 'Configuration to build with'
+    required: true
+    default: ''
+  SigningKeyAlias:  # id of input
+    description: 'Alias of the key to sign with'
+    required: true
+    default: ''
+  SigningKeyPassword:  # id of input
+    description: 'Password of the key to sign with'
+    required: true
+    default: ''
+  SigningKeyStore:  # id of input
+    description: 'Keystore to sign with in Base64 format'
+    required: true
+    default: ''
+  SigningKeystorePassword:  # id of input
+    description: 'Password of the keystore to sign with'
+    required: true
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.SolutionPath }}
     - ${{ inputs.ProjectPath }}
+    - ${{ inputs.BuildConfiguration }}
+    - ${{ inputs.SigningKeyAlias }}
+    - ${{ inputs.SigningKeyPassword }}
+    - ${{ inputs.SigningKeyStore }}
+    - ${{ inputs.SigningKeystorePassword }}
