@@ -26,6 +26,7 @@ jobs:
           SigningKeyAlias: ${{ secrets.KEY_ALIAS }}
           SigningKeyPassword: ${{ secrets.KEY_PASS }}
           BuildConfiguration: "Release"
+          BuildConfiguration: "AnyCPU"
       - uses: actions/upload-artifact@v2
         with:
           name: release
@@ -43,6 +44,7 @@ jobs:
 | SigningKeyAlias         | Signing key alias                                                               | Y         |
 | SigningKeyPassword      | Signing key password                                                            | Y         |
 | BuildConfiguration      | Build configuration                                                             | Y         |
+| BuildPlatform           | Build platform                                                                  | Y         |
 
 ## FAQ
 
