@@ -41,6 +41,7 @@ runs:
     - ${{ inputs.SolutionPath }}
     - ${{ inputs.ProjectPath }}
     - ${{ inputs.BuildConfiguration }}
+    - ${{ inputs.BuildPlatform }}
     - ${{ inputs.SigningKeyAlias }}
     - ${{ inputs.SigningKeyPassword }}
     - ${{ inputs.SigningKeyStore }}
