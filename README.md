@@ -29,7 +29,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: release
-          path: src/*.Android/bin/Android/Release/**Signed.apk
+          path: build/**Signed.apk
 ```
 
 ## Inputs
