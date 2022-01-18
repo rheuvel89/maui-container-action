@@ -14,6 +14,10 @@ inputs:
     description: 'Configuration to build with'
     required: true
     default: ''
+  BuildPlatform:  # id of input
+    description: 'Platform to build for'
+    required: true
+    default: ''
   SigningKeyAlias:  # id of input
     description: 'Alias of the key to sign with'
     required: true
