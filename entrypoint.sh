@@ -13,5 +13,5 @@ export KEY_STORE_PASSWORD=$7
 
 echo  -n "$SIGNING_KEY" | base64 --decode >> /github/workspace/android.keystore
 
-msbuild "$SLN_PATH" /p:AndroidSdkDirectory=/usr/lib/android-sdk /p:Configuration="$CONFIGURATION" /p:Platform="Any CPU" /restore
+msbuild "$CSPROJ_PATH" /p:AndroidSdkDirectory=/usr/lib/android-sdk /p:Configuration="$CONFIGURATION" /p:Platform="Any CPU" /restore
 msbuild "$CSPROJ_PATH" /t:restore /verbosity:normal /t:Rebuild /t:SignAndroidPackage /p:AndroidSdkDirectory=/usr/lib/android-sdk /p:Configuration="$CONFIGURATION" /p:Platform="Any CPU" /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias="$ALIAS" /p:AndroidSigningKeyPass="$SIGNING_KEY_PASS" /p:AndroidSigningKeyStore="/github/workspace/android.keystore" /p:AndroidSigningStorePass="$KEY_STORE_PASSWORD" /p:OutputPath="/github/workspace/build/"
