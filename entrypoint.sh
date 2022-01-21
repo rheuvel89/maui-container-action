@@ -18,4 +18,5 @@ ln -s /root/Library/Android/sdk /github/home/Library/Android/sdk
 
 echo  -n "$SIGNING_KEY" | base64 --decode >> /github/workspace/android.keystore
 
+msbuild "$CSPROJ_PATH" /restore /p:Configuration="$CONFIGURATION"
 msbuild "$CSPROJ_PATH" /t:restore /verbosity:normal /t:Rebuild /t:SignAndroidPackage /p:Configuration="$CONFIGURATION" /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias="$ALIAS" /p:AndroidSigningKeyPass="$SIGNING_KEY_PASS" /p:AndroidSigningKeyStore="/github/workspace/android.keystore" /p:AndroidSigningStorePass="$KEY_STORE_PASSWORD" /p:OutputPath="/github/workspace/build/"
