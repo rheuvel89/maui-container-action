@@ -14,10 +14,6 @@ inputs:
     description: 'Configuration to build with'
     required: true
     default: ''
-  BuildPlatform:  # id of input
-    description: 'Platform to build for'
-    required: true
-    default: ''
   SigningKeyAlias:  # id of input
     description: 'Alias of the key to sign with'
     required: true
@@ -41,7 +37,6 @@ runs:
     - ${{ inputs.SolutionPath }}
     - ${{ inputs.ProjectPath }}
     - ${{ inputs.BuildConfiguration }}
-    - ${{ inputs.BuildPlatform }}
     - ${{ inputs.SigningKeyAlias }}
     - ${{ inputs.SigningKeyPassword }}
     - ${{ inputs.SigningKeyStore }}
