@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM rheuvel/xamarin-android:30-latest
+FROM rheuvel/xamarin-android:33-latest
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
