@@ -1,6 +1,6 @@
-# Xamarin.Android Signed Build GitHub Container Action
+# MAUI.Android Signed Build GitHub Container Action
 
-Creates signed `apk` files for Xamarin.Android projects using GitHub Container Actions.
+Creates signed `apk` files for MAUI.Android projects using GitHub Container Actions.
 
 ## Usage
 
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: rheuvel89/xamarin-container-action@v2
+      - uses: rheuvel89/maui-container-action@v2
         with:
           SolutionPath: src/sample.Android/sample.Android.csproj
           ProjectPath: src/sample.sln

@@ -1,6 +1,6 @@
 # action.yml
-name: 'Xamain Android container build action'
-description: 'Build Xamarin Android projection inside a docker conainer'
+name: 'MAUI Android container build action'
+description: 'Build MAUI Android projection inside a docker conainer'
 inputs:
   SolutionPath:  # id of input
     description: 'Path to the solution file, relative to repository root'
