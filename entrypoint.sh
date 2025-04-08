@@ -17,4 +17,4 @@ ln -s /root/Library/Android/sdk /github/home/Library/Android/sdk
 
 echo  -n "$SIGNING_KEY" | base64 --decode >> /github/workspace/android.keystore
 
-dotnet publish -c "$CONFIGURATION" "$CSPROJ_PATH" --output "/github/workspace/build/"  -p:AndroidKeyStore=true -p:AndroidSigningKeyAlias="$ALIAS" /p:AndroidSigningKeyPass="$SIGNING_KEY_PASS" -p:AndroidSigningKeyStore="/github/workspace/android.keystore" -p:AndroidSigningStorePass="$KEY_STORE_PASSWORD"
+dotnet publish -c "$CONFIGURATION" "$CSPROJ_PATH" --output "/github/workspace/build/" -p:DebugSymbols=false -p:AndroidKeyStore=true -p:AndroidSigningKeyAlias="$ALIAS" /p:AndroidSigningKeyPass="$SIGNING_KEY_PASS" -p:AndroidSigningKeyStore="/github/workspace/android.keystore" -p:AndroidSigningStorePass="$KEY_STORE_PASSWORD"
